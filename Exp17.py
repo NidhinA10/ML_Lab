@@ -3,9 +3,13 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 from sklearn.cluster import KMeans
-
+from sklearn.datasets import load_digits
 df = pd.read_csv("datasets/digits.csv")
 X = df.drop("target",axis=1)
+'''
+data = load_digits()
+X = data.data
+'''
 X = StandardScaler().fit_transform(X)
 inertia = []
 silhouette = []
